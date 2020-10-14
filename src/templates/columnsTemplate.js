@@ -8,13 +8,18 @@
  * @returns { Array } block column
  */
 
-const getSingleColumnTemplate = ( type, colClassName, heading ) => {
+const getSingleColumnTemplate = ( type, heading, colClassName ) => {
 	return [
 		'core/column',
 		{},
 		[
-			//heading block
-			[],
+			[
+				'shubham-blocks/heading-with-icon',
+				{
+					type,
+					content: `<strong><span>${heading}</span></strong>`,
+				},
+			],
 			[
 				'core/list',
 				{}
@@ -24,7 +29,7 @@ const getSingleColumnTemplate = ( type, colClassName, heading ) => {
 };
 
 /**
- * Columns template/
+ * Columns template
  *
  * @returns { Array } block columns
  */
@@ -33,10 +38,10 @@ const ColumnsTemplate = [
 		'core/columns',
 		{},
 		[
-			getSingleColumnTemplate(),
-			getSingleColumnTemplate()
+			getSingleColumnTemplate( 'dos', "Do's" ),
+			getSingleColumnTemplate( 'donts', "Dont's" ),
 		]
-	]
-]
+	],
+];
 
 export default ColumnsTemplate;

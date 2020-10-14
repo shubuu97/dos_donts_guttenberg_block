@@ -17,10 +17,6 @@ import { __ } from '@wordpress/i18n';
 import Edit from './edit';
 
 /**
- * List of blocks that we
- */
-
-/**
  * Register block type.
  */
 registerBlockType('shubham-blocks/dos-and-donts', {
@@ -62,9 +58,11 @@ registerBlockType('shubham-blocks/dos-and-donts', {
    *
    * @returns { Object } Save content.
    */
-  save: ( { attributes } ) => {
+  save: () => {
 	  return (
-		  <InnerBlocks.Content />
+		  <div>
+		  	<InnerBlocks.Content />
+		  </div>
 	  )
   },
 });

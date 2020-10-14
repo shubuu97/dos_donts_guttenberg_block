@@ -9,10 +9,14 @@ import { InnerBlocks } from '@wordpress/block-editor';
 import columnsTemplate from './templates/columnsTemplate';
 
 // InnerBlocks templates.
-const templates = [
-	'core/group',
-	{},
-	columnsTemplate
+const TEMPLATES = [
+	[
+		'core/group',
+		{
+			backgroundColor: 'pale-cyan-blue',
+		},
+		columnsTemplate,
+	],
 ];
 
 
@@ -26,11 +30,11 @@ const ALLOWED_BLOCKS = [ 'core/group' ];
  *
  * @returns { Object } content.
  */
-const Edit =( { attributes } ) => {
+const Edit = () => {
 	return (
 		<div>
 			<InnerBlocks
-				templates={ templates }
+				templates={ TEMPLATES }
 				allowedBlocks={ ALLOWED_BLOCKS }
 				templateLock={ true }
 			/>
